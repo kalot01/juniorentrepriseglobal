@@ -1,0 +1,47 @@
+<!-- Hero Section -->
+<section id="hero" class="u-white u-center bg-image">
+  <img src="/assets/images/global-forum-16-stage.jpeg">
+  <h1>Confederations</h1>
+</section>
+
+<!-- Top CTA -->
+<%- partial('partial/hire-a-je-top-cta') %>
+
+<!-- Page Content -->
+<div class="bg-white"><div class="container">
+  <section>
+    <h3>What is a confederation?</h3>
+    <p>Confederations are umbrella organizations of Junior Enterprises in a given country or region.</p>
+    <p>They not only represent and support their JEs, but also work for the enlargement of the <a href="/concept">JE Concept</a> in their region.</p>
+    <p>If you are interested in creating a new Junior Enterprise in a country that already has a confederation, you can contact them for help, as they will be ready to aid you in this journey!</p>
+  </section>
+  <section>
+    <h3>The network</h3>
+    <p>The following confederations are part of <a href="/je-global">Junior Enterprises Global</a>:</p>
+    <div class="deck">
+      <% site.posts.forEach(function(confederation){ %>
+        <% if(confederation.type=='confederation'){ %>
+          <%- partial('partial/confederation-card', { confederation: confederation }) %>
+        <% } %>
+      <% }) %>
+      <div class="horizontal card bg-map-1">
+        <div class="twelve columns" style="text-align: center;">
+          <h4>More coming soon!</h4>
+        </div>
+      </div>
+    </div>
+    <br>
+    <p>Beyond the confederations above, our network also includes countries which are developing themselves (creating more JEs and establishing a confederation) to soon join Junior Enterprises Global.</p>
+    <p>Therefore, these JEs/countries currently act as observers of the JEGlobal organization:</p>
+    <div class="deck">
+      <% site.posts.forEach(function(observer){ %>
+        <% if(observer.type=='observer'){ %>
+          <%- partial('partial/confederation-card', { confederation: observer }) %>
+        <% } %>
+      <% }) %>
+    </div>
+  </section>
+</div></div>
+
+<!-- Bottom CTA -->
+<%- partial('partial/start-a-je-cta') %>

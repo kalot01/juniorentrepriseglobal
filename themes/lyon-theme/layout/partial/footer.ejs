@@ -1,0 +1,60 @@
+<section id="footer" class="bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="three-quarters column u-center u-750-left">
+        <img
+          src="/assets/logos/jeglobal-2.png"
+          alt="Junior Enterprises Global Logo"
+        />
+        <nav>
+          <a href="/">Home</a>
+          <a href="/map">Map</a>
+          <a href="/partners">Partners</a>
+          <a href="/contact">Contact</a>
+        </nav>
+      </div>
+      <div class="one-quarter column u-center u-750-right">
+        <nav>
+          <a href="https://www.facebook.com/juniorenterprisesglobal/"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/company/junior-enterprise-global-council/"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a href="https://www.instagram.com/je.global/"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </nav>
+      </div>
+    </div>
+    <div class="row u-tiny-text">
+      <div class="one-half column u-center u-750-left">
+        <p>© 2020 Junior Enterprises Global</p>
+      </div>
+      <div class="one-half column u-center u-750-right">
+        <p>
+          Questions?
+          <a href="mailto:secretarygeneral@juniorenterprises.org"
+            >secretarygeneral@juniorenterprises.org</a
+          >
+          |
+          <button class="u-button" onclick="smoothScroll('navigation');">
+            Scroll to top <i class="fa fa-caret-up"></i>
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="premium-partners" class="bg-dark">
+  <div class="container u-center">
+    <% site.posts.forEach(function(partner){ %> <% if(partner.type=='partner'){
+    %> <% if(partner.premium==true){ %>
+    <a href="<%- partner.link %>" target="_blank"
+      ><img src="<%- partner.logo %>" alt="<%- partner.title %> Logo"
+    /></a>
+    <% } %> <% } %> <% }) %>
+  </div>
+</section>

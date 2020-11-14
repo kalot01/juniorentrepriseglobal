@@ -1,0 +1,57 @@
+<% var jes = 0; %> <% var jeurs = 0; %> <% var projects = 0; %> <% var turnover
+= 0; %> <% site.posts.forEach(function(confederation){ %> <%
+if(confederation.type=='confederation'){ %> <% if(confederation.skip==false){ %>
+<% if (!isNaN(confederation.no_of_JEs)) { jes += confederation.no_of_JEs } %> <%
+if (!isNaN(confederation.no_of_JEurs)) { jeurs += confederation.no_of_JEurs } %>
+<% if (!isNaN(confederation.no_of_projects)) { projects +=
+confederation.no_of_projects } %> <% if
+((!isNaN(confederation.turnover))&&(!isNaN(confederation.conversion_rate))) {
+turnover += confederation.turnover*confederation.conversion_rate } %> <% } %> <%
+} %> <% }) %> <% var thousand_jeurs = Math.round(jeurs/1000) %> <% var
+thousand_projects = projects/1000 %> <% var turnover_millions = turnover/1000000
+%>
+
+<section id="network-numbers" class="bg-gray">
+  <div class="u-full-width container">
+    <div class="row">
+      <div class="three columns u-transparent u-button">
+        <span class="number">40+</span>
+        <br />Countries
+      </div>
+      <div class="three columns u-transparent u-button">
+        <!-- <span class="number"><%= jes %></span>-->
+        <span class="number">1500+</span>
+        <br />Junior Enterprises
+      </div>
+      <div class="three columns u-transparent u-button">
+        <!--<span class="number"><%- number_format(thousand_jeurs, {precision: 0}) %></span>
+        <span class="symbol">K</span>-->
+        <span class="number">62</span>
+        <span class="symbol">K+</span>
+        <br />Junior Entrepreneurs
+      </div>
+      <div class="three columns u-transparent u-button">
+        <span class="number"
+          ><%- number_format(thousand_projects, {precision: 1}) %></span
+        >
+        <span class="symbol">K</span>
+        <br />Projects per Year
+      </div>
+    </div>
+    <div class="row">
+      <div class="five columns u-transparent u-button">
+        <!--<span class="small symbol">US$</span>
+        <span class="number"><%- number_format(turnover_millions, {precision: 1}) %></span>
+        <span class="symbol">M</span>-->
+        <span class="number">22.5</span>
+        <span class="symbol">M€</span>
+        <br />Yearly Turnover
+      </div>
+      <div class="seven columns u-transparent u-button">
+        <span class="symbol">#1</span>
+        <br />Youth entrepreneurship movement
+        <span class="u-inline-block">in the world</span>
+      </div>
+    </div>
+  </div>
+</section>

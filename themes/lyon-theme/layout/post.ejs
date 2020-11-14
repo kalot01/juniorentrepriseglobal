@@ -1,0 +1,31 @@
+<!-- Hero Section -->
+<section id="hero" class="u-white u-center bg-image">
+  <img src="<%- page.featured_image %>">
+  <%- partial('partial/topic-tag', { post: page }) %>
+  <h1><%- page.title %></h1>
+  <p class="cite"><%- date(page.date, 'D - M - YYYY') %></p>
+</section>
+
+<section id="author" class="bg-gray"><div class="container">
+  <% site.posts.forEach(function(author){ %>
+    <% if(author.type=='author'){ %>
+      <% if(author.title==page.author){ %>
+        <div class="two columns">
+          <img src="<%- author.image %>" alt="<%- author.title %> Profile Image">
+        </div>
+        <div class="ten columns">
+          <h5>By <%- author.title %></h5>
+          <p><%- author.description %></p>
+        </div>
+      <% } %>
+    <% } %>
+  <% }) %>
+</div></section>
+
+<!-- Page Content -->
+<section id="content" class="bg-white"><div class="container">
+  <%- page.content %>
+</div></section>
+
+<!-- Call-to-Action -->
+<%- partial('partial/newsletter-cta') %>

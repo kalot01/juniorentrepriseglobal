@@ -1,0 +1,138 @@
+<!-- Hero Section -->
+<section id="hero" class="u-white u-center bg-image">
+  <img src="/assets/images/jobs-2k17-applause.jpeg" />
+  <h1>JEGlobal</h1>
+</section>
+
+<!-- Page Content -->
+<div class="bg-white">
+  <div class="container">
+    <section>
+      <h3>Who we are</h3>
+      <div class="row">
+        <div class="two-thirds column">
+          <p>
+            The <b>Junior Enterprises Global Organization</b> ("JEGlobal") is
+            the International Organization that represents the Junior Enterprise
+            Movement Worldwide.
+          </p>
+          <p>
+            We are currently composed by
+            <a href="/confederations">19 confederations</a> which represent a
+            total of 17 countries, all united in JEGlobal with the following
+            mission:
+          </p>
+          <blockquote>
+            Strengthen the Junior Enterprise Global Network towards boosting
+            educational, economical and collaborative impact.
+          </blockquote>
+          <p>
+            Since the confederations already represent JEs on a national or
+            continental level, our work is focused on global aspects of the
+            network.
+          </p>
+        </div>
+        <div class="u-750-vcenter offset-by-two-thirds one-third column">
+          <img src="/assets/logos/jeglobal-2.png" alt="JEGlobal Logo" />
+        </div>
+      </div>
+    </section>
+    <section>
+      <h3>Our history</h3>
+      <p>
+        Even though the JE Movement exists since 1967, a global cooperation only
+        started to be written in 2006 with the cooperation agreement signed
+        between the European and Brazilian confederations, which led to the
+        creation of the Junior Enterprise World Conference (JEWC).
+      </p>
+      <p>
+        In JEWC 2016, the second-ever <b>JE Global Forum</b> was held. National
+        leaders united to discuss the next steps for the international network
+        and the main resolution was the creation of the
+        <b>JE Global Council</b> as a collaboration platform within the founder
+        members.
+      </p>
+      <p>
+        Two years later, it was decided that the JE Global Council would be
+        renamed as <b>Junior Enterprises Global</b>, reflecting how the
+        organization grew beyond the initial council in order to better deliver
+        its work.
+      </p>
+    </section>
+  </div>
+</div>
+
+<section class="u-white u-center bg-image bg-gradient-1">
+  <img src="/assets/images/enej-2017.jpeg" />
+  <div class="container u-max-full-width">
+    <h3 class="u-mt0">What we do</h3>
+    <div class="deck">
+      <div class="vertical card">
+        <h4>Enlargement</h4>
+        <p>
+          Partnerships and programs to <b>stimulate the creation</b> of JEs.
+        </p>
+        <p>
+          <b>Support for JE and Confederation initiatives</b> in more than 20
+          countries around the world.
+        </p>
+      </div>
+      <div class="vertical card">
+        <h4>Development</h4>
+        <p>Support for the <b>newer confederations</b>.</p>
+        <p>
+          <b>Connection programs</b> to increase collaboration in the network.
+        </p>
+        <p>Communication initiatives to promote <b>global knowledge</b>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="bg-white">
+  <div class="container">
+    <section>
+      <h3>Our team</h3>
+      <p>
+        To execute all our programs and activities, we have an executive team,
+        composed of 3 board members and a team of managers. Beyond this team, a
+        group of ambassadors helps us promote the JE concept in more countries.
+      </p>
+      <h4>Executive Board</h4>
+      <div class="u-center u-tiny-text">
+        <% site.posts.forEach(function(teamdatabase){ %> <%
+        if(teamdatabase.type=='team-database'){ %> <%
+        teamdatabase.exbomembers.forEach(function(exbomember){ %> <%-
+        partial('partial/team-member-card', { member: exbomember.exbomember })
+        %> <% }) %> <% } %> <% }) %>
+      </div>
+      <h4>Executive Team</h4>
+      <div class="u-center u-tiny-text">
+        <% site.posts.forEach(function(teamdatabase){ %> <%
+        if(teamdatabase.type=='team-database'){ %> <%
+        teamdatabase.teammembers.forEach(function(teammember){ %> <%-
+        partial('partial/team-member-card', { member: teammember.teammember })
+        %> <% }) %> <% } %> <% }) %>
+      </div>
+      <!--<h4>Ambassadors</h4>
+      <div class="u-center u-tiny-text">
+        <% site.posts.forEach(function(teamdatabase){ %>
+          <% if(teamdatabase.type=='team-database'){ %>
+            <% teamdatabase.ambassadors.forEach(function(ambassador){ %>
+              <%- partial('partial/team-member-card', { member: ambassador.ambassador }) %>
+            <% }) %>
+          <% } %>
+        <% }) %>
+      </div>-->
+    </section>
+  </div>
+</div>
+
+<!-- Call-to-Action -->
+<section class="u-white u-center bg-image bg-gradient-2">
+  <img src="/assets/images/jobs-2k17-stage.jpeg" />
+  <div class="container">
+    <p>Interested in collaborating with us?</p>
+    <a class="button" href="/partners">Learn more about being a partner</a>
+  </div>
+</section>
