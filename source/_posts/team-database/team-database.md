@@ -4,6 +4,12 @@ title: Team Database
 exbomembers:
   - exbomember:
       profilepic: /assets/uploads/board-recovered-06.png
+  - exbomember:
+      profilepic: /assets/uploads/board-recovered-07.png
+  - exbomember:
+      profilepic: /assets/uploads/board-recovered-05.png
+  - exbomember:
+      profilepic: /assets/uploads/board-recovered-08.png
 teammembers:
   - teammember:
       name: Raisa Kacuta
