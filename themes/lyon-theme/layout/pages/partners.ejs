@@ -1,75 +1,98 @@
 <!-- Hero Section -->
 <section id="hero" class="u-white u-center bg-image">
-  <img src="https://images.unsplash.com/photo-1478809319988-35cad52fd89c?q=75&amp;fm=jpg&amp;w=1000&amp;fit=max">
+  <img
+    src="https://images.unsplash.com/photo-1478809319988-35cad52fd89c?q=75&amp;fm=jpg&amp;w=1000&amp;fit=max"
+  />
   <h1>Partners</h1>
 </section>
 
 <!-- Page Content -->
-<div class="bg-white"><div class="container">
-  <section>
-    <h2 class="impact-text bg-map-1">
-      A <span class="blue larger">Global Movement</span><br>
-      shaping the <span class="gray">leaders<br>
-      of tomorrow</span>
-    </h2>
-    <p>Junior Entrepreneurs represent the best talents in universities around the world. They are committed, purpose-driven and come from a variety of fields.</p>
-    <p>Partners of the JE Global Council get to connect with these student talents & work with us to build a more entrepreneurial world.</p>
-    <blockquote>
-      <p>Global Council partners play a key role in the <b>enlargement</b> and <b>development</b> of the JE movement at a <b>global level</b>, becoming part of our shared history in the process.</p>
-      <cite>— Kalil El Kadri Monteiro, 2018 Head of Strategy & Partnerships</cite>
-    </blockquote>
-  </section>
-  <section>
-    <h3>Our partners</h3>
-    <div class="deck">
-      <% site.posts.forEach(function(partner){ %>
-        <% if(partner.type=='partner'){ %>
-          <% if(partner.premium==true){ %>
-            <%- partial('partial/partner-card', {partner: partner}) %>
-          <% } %>
-        <% } %>
-      <% }) %>
-      <% site.posts.forEach(function(partner){ %>
-        <% if(partner.type=='partner'){ %>
-          <% if(partner.premium==false){ %>
-            <%- partial('partial/partner-card', {partner: partner}) %>
-          <% } %>
-        <% } %>
-      <% }) %>
-      <div class="horizontal card bg-map-1">
-        <div class="twelve columns" style="text-align: center;">
-          <h4>More coming soon!</h4>
+<div class="bg-white">
+  <div class="container">
+    <section>
+      <h2 class="impact-text bg-map-1">
+        A <span class="blue larger">Global Network</span><br />
+        shaping the
+        <span class="gray"
+          >leaders<br />
+          of tomorrow</span
+        >
+      </h2>
+      <p>
+        Junior Entrepreneurs represent the best talents in universities around
+        the world. They are committed, purpose-driven and come from a variety of
+        fields.
+      </p>
+      <p>
+        Partners of the JE Global Council get to connect with these student
+        talents & work with us to build a more entrepreneurial world.
+      </p>
+      <blockquote>
+        <p>
+          Global Council partners play a key role in the <b>enlargement</b> and
+          <b>development</b> of the JE movement at a <b>global level</b>,
+          becoming part of our shared history in the process.
+        </p>
+        <cite
+          >— Kalil El Kadri Monteiro, 2018 Head of Strategy & Partnerships</cite
+        >
+      </blockquote>
+    </section>
+    <section>
+      <h3>Our partners</h3>
+      <div class="deck">
+        <% site.posts.forEach(function(partner){ %> <%
+        if(partner.type=='partner'){ %> <% if(partner.premium==true){ %> <%-
+        partial('partial/partner-card', {partner: partner}) %> <% } %> <% } %>
+        <% }) %> <% site.posts.forEach(function(partner){ %> <%
+        if(partner.type=='partner'){ %> <% if(partner.premium==false){ %> <%-
+        partial('partial/partner-card', {partner: partner}) %> <% } %> <% } %>
+        <% }) %>
+        <div class="horizontal card bg-map-1">
+          <div class="twelve columns" style="text-align: center">
+            <h4>More coming soon!</h4>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-</div></div>
+    </section>
+  </div>
+</div>
 
 <section class="u-white u-center bg-image bg-gradient-1">
-  <img src="https://images.unsplash.com/photo-1525423186417-45cade1b79c0?q=75&amp;fm=jpg&amp;w=1000&amp;fit=max">
+  <img
+    src="https://images.unsplash.com/photo-1525423186417-45cade1b79c0?q=75&amp;fm=jpg&amp;w=1000&amp;fit=max"
+  />
   <div class="container">
     <p><b>Want to become a partner of the Global Council?</b></p>
-    <p>Send an e-mail to <a class="u-white-link" href="mailto:secretarygeneral@juniorenterprises.org">secretarygeneral@juniorenterprises.org</a></p>
+    <p>
+      Send an e-mail to
+      <a
+        class="u-white-link"
+        href="mailto:secretarygeneral@juniorenterprises.org"
+        >secretarygeneral@juniorenterprises.org</a
+      >
+    </p>
     <p>We are waiting for you!</p>
   </div>
 </section>
 
-<div class="bg-white"><div class="container">
-  <section>
-    <h3>In the media</h3>
-    <div class="deck">
-      <% site.posts.sort('date', -1).forEach(function(publication){ %>
-        <% if(publication.type=='media-publication'){ %>
-          <%- partial('partial/media-publication-card', { publication: publication }) %>
-        <% } %>
-      <% }) %>
-    </div>
-  </section>
-</div></div>
+<div class="bg-white">
+  <div class="container">
+    <section>
+      <h3>In the media</h3>
+      <div class="deck">
+        <% site.posts.sort('date', -1).forEach(function(publication){ %> <%
+        if(publication.type=='media-publication'){ %> <%-
+        partial('partial/media-publication-card', { publication: publication })
+        %> <% } %> <% }) %>
+      </div>
+    </section>
+  </div>
+</div>
 
 <!-- Call-to-Action -->
 <section class="u-white u-center bg-image bg-gradient-2">
-  <img src="/assets/images/jobs-2k17-stage-2.jpeg">
+  <img src="/assets/images/jobs-2k17-stage-2.jpeg" />
   <div class="container">
     <p>Questions? Inquiries?</p>
     <a class="button" href="/contact">Contact us!</a>
