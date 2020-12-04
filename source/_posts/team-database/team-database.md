@@ -12,25 +12,9 @@ exbomembers:
       profilepic: /assets/uploads/board-recovered-07.png
 teammembers:
   - teammember:
-      name: Raisa Kacuta
-      position: Connection Manager
-      profilepic: /assets/uploads/raisakacuta.jpg
+      profilepic: /assets/uploads/managers.-1-13.png
   - teammember:
-      name: Baptiste Baudu
-      position: Enlargement Manager
-      profilepic: /assets/uploads/baptistebaudu.jpg
-  - teammember:
-      name: Guilhem Garrel
-      position: Enlargement Manager
-      profilepic: /assets/uploads/guilhemgarrel.jpg
-  - teammember:
-      name: Louis Gesbert
-      position: Enlargement Manager
-      profilepic: /assets/uploads/louisgesbert.jpg
-  - teammember:
-      name: Emir Ben Zayed
-      position: Communications Manager
-      profilepic: /assets/uploads/emirbenzayed-nf_resize-smartcrop-w-300-h-300.jpg
+      profilepic: /assets/uploads/managers.-1-14.png
 ambassadors: []
 ---
 
