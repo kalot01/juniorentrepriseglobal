@@ -166,6 +166,8 @@ function getFields() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       // Save server response
+      console.log("get fields");
+      console.log(xhttp.responseText);
       fields = JSON.parse(xhttp.responseText);
       // Update fields list
       var html = '<option value="">-- Any field --</option>';
@@ -192,6 +194,8 @@ function getCountries() {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       // Save server response
+      console.log("get Countries");
+      console.log(xhttp.responseText);
       countries = JSON.parse(xhttp.responseText);
       // Process country names
       for (var i = 0; i < countries.length; i++) {
@@ -233,6 +237,8 @@ function setMarkers(map) {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
       // Save server response
+            console.log("get database");
+      console.log(xhttp.responseText);
       mapdb = JSON.parse(xhttp.responseText);
       // Set JE markers
       for (var i = 0; i < mapdb.length; i++) {
@@ -513,6 +519,8 @@ function openInfo(je) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
+            console.log("JE Info");
+      console.log(xhttp.responseText);
       jeinfo = JSON.parse(xhttp.responseText);
       // Cover and Logo
       document.getElementById('je-cover').style.backgroundImage = "url(https://junior-connect.com/storage/" + jeinfo.bg + ")";
