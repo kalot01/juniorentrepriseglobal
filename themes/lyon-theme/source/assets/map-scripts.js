@@ -520,8 +520,8 @@ function openInfo(je) {
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
             console.log("JE Info");
-      console.log(xhttp.responseText);
       jeinfo = JSON.parse(xhttp.responseText);
+      console.log(jeinfo);
       // Cover and Logo
       document.getElementById('je-cover').style.backgroundImage = "url(https://junior-connect.com/storage/" + jeinfo.bg + ")";
       document.getElementById('je-logo').style.backgroundImage = "url(https://junior-connect.com/storage/" + jeinfo.logo + ")";
