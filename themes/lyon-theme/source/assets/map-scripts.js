@@ -169,9 +169,10 @@ function fetchdata() {
       mapdb = JSON.parse(xhttp.responseText);
       console.log("mother");
       elements = mapdb.map((el) => el.id);
+      console.log(elements);
       for (let i of elements) {
-        console.log(i);
-        var xhttpS = new XMLHttpRequest();
+        // console.log(i);
+        /*var xhttpS = new XMLHttpRequest();
         xhttpS.onreadystatechange = function () {
           console.log(xhttpS.responseText);
           console.log("t3adet");
@@ -183,7 +184,7 @@ function fetchdata() {
           "Authorization",
           "Basic " + btoa("globalcouncil:GC_map_2018")
         );
-        xhttpS.send();
+        xhttpS.send();*/
       }
       setTimeout(() => {
         data = JSON.stringify(results);
