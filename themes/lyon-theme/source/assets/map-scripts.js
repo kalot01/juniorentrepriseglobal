@@ -169,7 +169,7 @@ function fetchdata() {
       mapdb = JSON.parse(xhttp.responseText);
       elements = mapdb.map((el) => el.id);
       for (let i of elements) {
-        setTimeout(() => {
+        if (i >= 60) {
           let xhttpS = new XMLHttpRequest();
           xhttpS.onreadystatechange = function () {
             if (xhttpS.responseText != "") {
@@ -183,16 +183,14 @@ function fetchdata() {
             "Basic " + btoa("globalcouncil:GC_map_2018")
           );
           xhttpS.send();
-        }, 900 * i);
+        }
       }
-      setTimeout(() => {
-        data = JSON.stringify(results);
-        var a = document.createElement("a");
-        var file = new Blob([data], { type: "text/json;charset=utf-8;" });
-        a.href = URL.createObjectURL(file);
-        a.download = "hoy.json";
-        a.click();
-      }, 1080000);
+      data = JSON.stringify(results);
+      var a = document.createElement("a");
+      var file = new Blob([data], { type: "text/json;charset=utf-8;" });
+      a.href = URL.createObjectURL(file);
+      a.download = "hoy.json";
+      a.click();
     }
   };
   xhttp.open("GET", "/api/globalcouncil/map", false);
