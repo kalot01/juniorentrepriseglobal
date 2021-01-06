@@ -161,6 +161,8 @@ function initMap() {
   fetchdata();
 }
 function fetchdata() {
+    var elements = [];
+  var results = [];
   console.log("begin fetch");
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
