@@ -169,26 +169,30 @@ function fetchdata() {
       mapdb = JSON.parse(xhttp.responseText);
       elements = mapdb.map((el) => el.id);
       for (let i of elements) {
-        let xhttpS = new XMLHttpRequest();
-        xhttpS.onreadystatechange = function () {
-          if (xhttpS.responseText != "") {
-            results.push(JSON.parse(xhttpS.responseText));
-          }
-        };
+        setTimeout(() => {
+          let xhttpS = new XMLHttpRequest();
+          xhttpS.onreadystatechange = function () {
+            if (xhttpS.responseText != "") {
+              results.push(JSON.parse(xhttpS.responseText));
+            }
+          };
 
-        xhttpS.open("GET", "/api/globalcouncil/" + i, false);
-        xhttpS.setRequestHeader(
-          "Authorization",
-          "Basic " + btoa("globalcouncil:GC_map_2018")
-        );
-        xhttpS.send();
+          xhttpS.open("GET", "/api/globalcouncil/" + i, false);
+          xhttpS.setRequestHeader(
+            "Authorization",
+            "Basic " + btoa("globalcouncil:GC_map_2018")
+          );
+          xhttpS.send();
+        }, 100 * i);
       }
-      data = JSON.stringify(results);
-      var a = document.createElement("a");
-      var file = new Blob([data], { type: "text/json;charset=utf-8;" });
-      a.href = URL.createObjectURL(file);
-      a.download = "hoy.json";
-      a.click();
+      setTimeout(() => {
+        data = JSON.stringify(results);
+        var a = document.createElement("a");
+        var file = new Blob([data], { type: "text/json;charset=utf-8;" });
+        a.href = URL.createObjectURL(file);
+        a.download = "hoy.json";
+        a.click();
+      }, 120000);
     }
   };
   xhttp.open("GET", "/api/globalcouncil/map", false);
