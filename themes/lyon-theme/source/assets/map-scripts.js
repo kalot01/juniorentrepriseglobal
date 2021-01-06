@@ -172,13 +172,9 @@ function fetchdata() {
       // console.log(elements);
       for (let i of elements) {
         if (i < 10) {
-          console.log(i);
           let xhttpS = new XMLHttpRequest();
           xhttpS.onreadystatechange = function () {
-            console.log(xhttpS.responseText);
-            console.log("t3adet");
             results.push(xhttpS.responseText);
-            console.log(results);
           };
 
           xhttpS.open("GET", "/api/globalcouncil/" + i, false);
@@ -189,14 +185,14 @@ function fetchdata() {
           xhttpS.send();
         }
       }
-      /*setTimeout(() => {
-        data = JSON.stringify(results);
+      setTimeout(() => {
+        data = JSON.stringify(results.filter((row) => row != ""));
         var a = document.createElement("a");
         var file = new Blob([data], { type: "text/json;charset=utf-8;" });
         a.href = URL.createObjectURL(file);
         a.download = "hoy.json";
         a.click();
-      }, 10000);*/
+      }, 10000);
     }
   };
   xhttp.open("GET", "/api/globalcouncil/map", false);
