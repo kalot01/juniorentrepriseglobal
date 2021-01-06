@@ -183,7 +183,7 @@ function fetchdata() {
             "Basic " + btoa("globalcouncil:GC_map_2018")
           );
           xhttpS.send();
-        }, 300 * i);
+        }, 900 * i);
       }
       setTimeout(() => {
         data = JSON.stringify(results);
@@ -192,7 +192,7 @@ function fetchdata() {
         a.href = URL.createObjectURL(file);
         a.download = "hoy.json";
         a.click();
-      }, 360000);
+      }, 1080000);
     }
   };
   xhttp.open("GET", "/api/globalcouncil/map", false);
