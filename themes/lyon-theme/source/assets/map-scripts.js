@@ -167,14 +167,14 @@ function fetchdata() {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       mapdb = JSON.parse(xhttp.responseText);
-      console.log("mother");
       elements = mapdb.map((el) => el.id);
-      // console.log(elements);
       for (let i of elements) {
         if (i < 10) {
           let xhttpS = new XMLHttpRequest();
           xhttpS.onreadystatechange = function () {
-            results.push(xhttpS.responseText);
+            if (xhttpS.responseText != "") {
+              results.push(JSON.parse(xhttpS.responseText));
+            }
           };
 
           xhttpS.open("GET", "/api/globalcouncil/" + i, false);
@@ -186,7 +186,7 @@ function fetchdata() {
         }
       }
       setTimeout(() => {
-        data = JSON.stringify(results.filter((row) => row != ""));
+        data = JSON.stringify(results);
         var a = document.createElement("a");
         var file = new Blob([data], { type: "text/json;charset=utf-8;" });
         a.href = URL.createObjectURL(file);
@@ -208,8 +208,6 @@ function getFields() {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       // Save server response
-      console.log("get fields");
-      console.log(xhttp.responseText);
       fields = JSON.parse(xhttp.responseText);
       // Update fields list
       var html = '<option value="">-- Any field --</option>';
@@ -245,8 +243,6 @@ function getCountries() {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       // Save server response
-      console.log("get Countries");
-      console.log(xhttp.responseText);
       countries = JSON.parse(xhttp.responseText);
       // Process country names
       for (var i = 0; i < countries.length; i++) {
@@ -297,8 +293,6 @@ function setMarkers(map) {
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
       // Save server response
-      console.log("get database");
-      console.log(xhttp.responseText);
       mapdb = JSON.parse(xhttp.responseText);
       // Set JE markers
       for (var i = 0; i < mapdb.length; i++) {
@@ -616,9 +610,7 @@ function openInfo(je) {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
-      console.log("JE Info");
       jeinfo = JSON.parse(xhttp.responseText);
-      console.log(jeinfo);
       // Cover and Logo
       document.getElementById("je-cover").style.backgroundImage =
         "url(https://junior-connect.com/storage/" + jeinfo.bg + ")";
