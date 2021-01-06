@@ -161,35 +161,36 @@ function initMap() {
   fetchdata();
 }
 function fetchdata() {
-    var elements = [];
+  var elements = [];
   var results = [];
-  console.log("begin fetch");
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function () {
-    console.log("dkhaln");
     if (this.readyState == 4 && this.status == 200) {
       mapdb = JSON.parse(xhttp.responseText);
       console.log("mother");
       elements = mapdb.map((el) => el.id);
       for (let i of elements) {
-        results.push(
-          fetch("https://junior-connect.com/api/globalcouncil/" + i, {
-            mode: "no-cors",
-            headers: {
-              Authorization: "Basic Z2xvYmFsY291bmNpbDpHQ19tYXBfMjAxOA==",
-              "Content-Type": "application/json",
-            },
-          })
+        var xhttpS = new XMLHttpRequest();
+        xhttpS.onreadystatechange = function () {
+          test = JSON.parse(xhttpS.responseText);
+          results.push(test);
+        };
+
+        xhttpS.open("GET", "/api/globalcouncil/" + i, true);
+        xhttpS.setRequestHeader(
+          "Authorization",
+          "Basic " + btoa("globalcouncil:GC_map_2018")
         );
+        xhttpS.send();
       }
-      Promise.all(results).then((data) => {
-        data = JSON.stringify(data);
+      setTimeout(() => {
+        data = JSON.stringify(results);
         var a = document.createElement("a");
         var file = new Blob([data], { type: "text/json;charset=utf-8;" });
         a.href = URL.createObjectURL(file);
         a.download = "hoy.json";
         a.click();
-      });
+      }, 10000);
     }
   };
   xhttp.open("GET", "/api/globalcouncil/map", true);
