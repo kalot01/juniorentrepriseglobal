@@ -174,9 +174,8 @@ function fetchdata() {
         var xhttpS = new XMLHttpRequest();
         xhttpS.onreadystatechange = function () {
           console.log(xhttpS.responseText);
-          test = JSON.parse(xhttpS.responseText);
           console.log("t3adet");
-          results.push(test);
+          results.push(xhttpS.responseText);
         };
 
         xhttpS.open("GET", "/api/globalcouncil/" + i, true);
