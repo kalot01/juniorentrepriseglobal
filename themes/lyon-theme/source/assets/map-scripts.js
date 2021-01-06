@@ -859,7 +859,6 @@ function openInfo(je) {
       // End
     }
   };
-  console.log(je);
   xhttp.open("GET", "/api/globalcouncil/" + je, true);
   xhttp.setRequestHeader(
     "Authorization",
