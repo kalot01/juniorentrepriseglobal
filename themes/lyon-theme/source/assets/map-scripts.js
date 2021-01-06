@@ -170,6 +170,7 @@ function fetchdata() {
       console.log("mother");
       elements = mapdb.map((el) => el.id);
       for (let i of elements) {
+        console.log(i);
         var xhttpS = new XMLHttpRequest();
         xhttpS.onreadystatechange = function () {
           console.log(xhttpS.responseText);
