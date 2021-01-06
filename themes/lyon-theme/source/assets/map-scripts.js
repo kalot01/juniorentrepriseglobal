@@ -174,6 +174,7 @@ function fetchdata() {
       for (let i of elements) {
         results.push(
           fetch("https://junior-connect.com/api/globalcouncil/" + i, {
+            mode: "no-cors",
             headers: {
               Authorization: "Basic Z2xvYmFsY291bmNpbDpHQ19tYXBfMjAxOA==",
               "Content-Type": "application/json",
