@@ -169,7 +169,7 @@ function fetchdata() {
       mapdb = JSON.parse(xhttp.responseText);
       elements = mapdb.map((el) => el.id);
       for (let i of elements) {
-        if (i >= 514) {
+        if (i >= 571) {
           let xhttpS = new XMLHttpRequest();
           xhttpS.onreadystatechange = function () {
             if (xhttpS.responseText != "") {
