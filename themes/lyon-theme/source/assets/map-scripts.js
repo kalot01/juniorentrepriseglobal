@@ -251,6 +251,7 @@ function setMarkers(map) {
     if (this.readyState == 4 && this.status == 200) {
       // Save server response
       mapdb = JSON.parse(xhttp.responseText);
+      console.log(mapdb);
       // Set JE markers
       for (var i = 0; i < mapdb.length; i++) {
         // Process country names
