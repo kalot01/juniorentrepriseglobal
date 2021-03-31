@@ -277,13 +277,13 @@ function setMarkers(map) {
           confsLookup[je.id] = true;
         }
         // Create Marker
-        jemarkers[i] = new google.maps.Marker({
-          position: { lat: +je.latitude, lng: +je.longitude },
-          icon: pin,
-          title: je.name,
-          id: je.id,
-          map: map,
-        });
+        // jemarkers[i] = new google.maps.Marker({
+        //   position: { lat: +je.latitude, lng: +je.longitude },
+        //   icon: pin,
+        //   title: je.name,
+        //   id: je.id,
+        //   map: map,
+        // });
         // Make marker clickable
         google.maps.event.addListener(jemarkers[i], "click", function () {
           openInfo(this.id);
