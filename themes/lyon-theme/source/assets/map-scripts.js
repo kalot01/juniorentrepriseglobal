@@ -263,6 +263,17 @@ function setMarkers(map) {
       google.maps.event.addListener(melkart, "click", function () {
         // openInfo(this.id);
       });
+      jet = new google.maps.Marker({
+        position: { lat: +36.8319554, lng: +10.2295351 },
+        icon: confpin,
+        title: "Junior Entreprise of Tunisia",
+        id: 1,
+        map: map,
+      });
+      // Make marker clickable
+      google.maps.event.addListener(jet, "click", function () {
+        // openInfo(this.id);
+      });
       // Set JE markers
       for (var i = 0; i < mapdb.length; i++) {
         // Process country names
