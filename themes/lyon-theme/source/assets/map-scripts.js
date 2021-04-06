@@ -252,6 +252,17 @@ function setMarkers(map) {
       // Save server response
       mapdb = JSON.parse(xhttp.responseText);
       console.log(mapdb);
+      melkart = new google.maps.Marker({
+        position: { lat: +46.51993710000001, lng: +6.5652458 },
+        icon: jepin,
+        title: "Melkart Junior Entreprise",
+        id: 1,
+        map: map,
+      });
+      // Make marker clickable
+      google.maps.event.addListener(melkart, "click", function () {
+        // openInfo(this.id);
+      });
       // Set JE markers
       for (var i = 0; i < mapdb.length; i++) {
         // Process country names
@@ -290,17 +301,6 @@ function setMarkers(map) {
           openInfo(this.id);
         });
       }
-      melkart = new google.maps.Marker({
-        position: { lat: +36.8573214, lng: +10.2035522 },
-        icon: jepin,
-        title: "Melkart Junior Entreprise",
-        id: 1,
-        map: map,
-      });
-      // Make marker clickable
-      google.maps.event.addListener(melkart, "click", function () {
-        // openInfo(this.id);
-      });
     }
   };
   xhttp.open("GET", "/api/globalcouncil/map", true);
