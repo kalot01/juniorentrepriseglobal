@@ -253,7 +253,7 @@ function setMarkers(map) {
       mapdb = JSON.parse(xhttp.responseText);
       console.log(mapdb);
       melkart = new google.maps.Marker({
-        position: { lat: +46.51993710000001, lng: +6.5652458 },
+        position: { lat: +36.8573214, lng: +10.2035522 },
         icon: jepin,
         title: "Melkart Junior Entreprise",
         id: 1,
