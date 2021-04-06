@@ -290,6 +290,17 @@ function setMarkers(map) {
           openInfo(this.id);
         });
       }
+      melkart = new google.maps.Marker({
+        position: { lat: +36.8573214, lng: +10.2035522 },
+        icon: jepin,
+        title: "Melkart Junior Entreprise",
+        id: 1,
+        map: map,
+      });
+      // Make marker clickable
+      google.maps.event.addListener(melkart, "click", function () {
+        // openInfo(this.id);
+      });
     }
   };
   xhttp.open("GET", "/api/globalcouncil/map", true);

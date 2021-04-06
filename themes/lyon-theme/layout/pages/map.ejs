@@ -1,38 +1,145 @@
-<div id="modal" style="font-family: 'Open Sans', sans-serif; display: table; width: 100%; height: 100%; position: fixed; z-index: 9; background-color: #323232; background-color: rgba(0,0,0,0.6)">
-  <div id="modal-area" style="display: table-cell; vertical-align: middle;">
-    <div style="width: 80%; max-width: 360px; max-height: 480px; margin: 0 auto; position: relative; overflow: hidden; box-sizing: border-box; border-radius: 6px; background-color: #f2f2f2; box-shadow: 0px 6px 18px 0px rgba(0,0,0,0.7); height: 80%; height: 80vh; ">
-      <button style="font-size: 38px; position: absolute; top: -6px; right: 12px; color: #757575; background-color: transparent; border: none; z-index: 9; font-weight: bold;" onclick="document.getElementById('modal').style.display = 'none';">×</button>
-      <div style="overflow-y: auto; overflow-y: overlay; position: absolute; height: 100%; width: 100%; box-sizing: border-box; padding: 42px 24px 84px 24px;">
-        <center><svg id="i-location" viewBox="-8 0 48 41" width="96" height="82" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1">
-          <circle cx="16" cy="11" r="4" stroke="#24a1c8"/>
-          <path d="M24 15 C21 22 16 30 16 30 16 30 11 22 8 15 5 8 10 2 16 2 22 2 27 8 24 15" stroke="#24a1c8"/>
-          <path d="M16 40 27 36 38 40 32 24 24 22 27 36 M16 40 5 36 -6 40 0 24 8 22 5 36 M16 40 16 34"/>
-        </svg></center>
+<div
+  id="modal"
+  style="
+    font-family: 'Open Sans', sans-serif;
+    display: table;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9;
+    background-color: #323232;
+    background-color: rgba(0, 0, 0, 0.6);
+  "
+>
+  <div id="modal-area" style="display: table-cell; vertical-align: middle">
+    <div
+      style="
+        width: 80%;
+        max-width: 360px;
+        max-height: 480px;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+        box-sizing: border-box;
+        border-radius: 6px;
+        background-color: #f2f2f2;
+        box-shadow: 0px 6px 18px 0px rgba(0, 0, 0, 0.7);
+        height: 80%;
+        height: 80vh;
+      "
+    >
+      <button
+        style="
+          font-size: 38px;
+          position: absolute;
+          top: -6px;
+          right: 12px;
+          color: #757575;
+          background-color: transparent;
+          border: none;
+          z-index: 9;
+          font-weight: bold;
+        "
+        onclick="document.getElementById('modal').style.display = 'none';"
+      >
+        ×
+      </button>
+      <div
+        style="
+          overflow-y: auto;
+          overflow-y: overlay;
+          position: absolute;
+          height: 100%;
+          width: 100%;
+          box-sizing: border-box;
+          padding: 42px 24px 84px 24px;
+        "
+      >
+        <center>
+          <svg
+            id="i-location"
+            viewBox="-8 0 48 41"
+            width="96"
+            height="82"
+            fill="none"
+            stroke="currentcolor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="1"
+          >
+            <circle cx="16" cy="11" r="4" stroke="#24a1c8" />
+            <path
+              d="M24 15 C21 22 16 30 16 30 16 30 11 22 8 15 5 8 10 2 16 2 22 2 27 8 24 15"
+              stroke="#24a1c8"
+            />
+            <path
+              d="M16 40 27 36 38 40 32 24 24 22 27 36 M16 40 5 36 -6 40 0 24 8 22 5 36 M16 40 16 34"
+            />
+          </svg>
+        </center>
         <h2>Welcome!</h2>
-        <p>Junior Enterprises ("JEs") are companies run entirely by university students.</p>
-        <p>They offer services in their fields of study to other companies, entrepreneurs and society as a whole.</p>
+        <p>
+          Junior Enterprises ("JEs") are companies run entirely by university
+          students.
+        </p>
+        <p>
+          They offer services in their fields of study to other companies,
+          entrepreneurs and society as a whole.
+        </p>
         <p>Use this map to find JEs to hire for your next project!</p>
-        <p>Search by name, field and/or country until you find one to contact.</p>
+        <p>
+          Search by name, field and/or country until you find one to contact.
+        </p>
       </div>
-      <label style="position: absolute; bottom: 50px; padding: 12px 0; box-sizing: border-box; width: 100%; text-align: center; background-color: inherit;">
-        <input type="checkbox" id="dont-show" onkeyup="if(event.keyCode===13){this.click();}">
+      <label
+        style="
+          position: absolute;
+          bottom: 50px;
+          padding: 12px 0;
+          box-sizing: border-box;
+          width: 100%;
+          text-align: center;
+          background-color: inherit;
+        "
+      >
+        <input
+          type="checkbox"
+          id="dont-show"
+          onkeyup="if(event.keyCode===13){this.click();}"
+        />
         Don't show this again
       </label>
-      <a href="#" class="modal-btn" style="position: absolute; width: 100%; text-decoration: none; padding: 12px 18px; box-sizing: border-box; font-size: 20px; bottom: 0; left: 0; text-align: center;" onclick="document.getElementById('modal').style.display = 'none'; setCookie('dont-show');">Ok! Go to map</a>
+      <a
+        href="#"
+        class="modal-btn"
+        style="
+          position: absolute;
+          width: 100%;
+          text-decoration: none;
+          padding: 12px 18px;
+          box-sizing: border-box;
+          font-size: 20px;
+          bottom: 0;
+          left: 0;
+          text-align: center;
+        "
+        onclick="document.getElementById('modal').style.display = 'none'; setCookie('dont-show');"
+        >Ok! Go to map</a
+      >
     </div>
   </div>
   <script>
-    window.onclick = function(event) {
-      if (event.target == document.getElementById('modal-area')) {
-        document.getElementById('modal').style.display = "none";
+    window.onclick = function (event) {
+      if (event.target == document.getElementById("modal-area")) {
+        document.getElementById("modal").style.display = "none";
       }
-    }
+    };
     function checkCookie(cname) {
       var name = cname + "=";
-      var ca = document.cookie.split(';');
-      for(var i = 0; i < ca.length; i++) {
+      var ca = document.cookie.split(";");
+      for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
-        while (c.charAt(0) == ' ') {
+        while (c.charAt(0) == " ") {
           c = c.substring(1);
         }
         if (c.indexOf(name) == 0) {
@@ -48,7 +155,12 @@
 <!-- Search Box -->
 <div class="search-container" id="search">
   <div class="search">
-    <input type="search" placeholder="Find a Junior Enterprise..." id="search-box" onfocusin="openSearchPanel()">
+    <input
+      type="search"
+      placeholder="Find a Junior Enterprise..."
+      id="search-box"
+      onfocusin="openSearchPanel()"
+    />
     <i class="fa fa-search" id="searchIcon" onclick="openSearchPanel()"></i>
     <button id="clearSearch-btn" onclick="clearSearch()">×</button>
     <div class="search-border"></div>
@@ -74,21 +186,38 @@
         <p class="last">Filter by type:</p>
         <div class="checkbox-container">
           <label>
-            <input type="checkbox" id="type-je" onkeyup="if(event.keyCode===13){this.click();}" checked>
-            <div class="tooltip">Junior Enterprise
-              <span class="tooltiptext">Student-run companies that offer services in their fields of study to clients</span>
+            <input
+              type="checkbox"
+              id="type-je"
+              onkeyup="if(event.keyCode===13){this.click();}"
+              checked
+            />
+            <div class="tooltip">
+              Junior Enterprise
+              <span class="tooltiptext"
+                >Student-run companies that offer services in their fields of
+                study to clients</span
+              >
             </div>
           </label>
           <label>
-            <input type="checkbox" id="type-conf" onkeyup="if(event.keyCode===13){this.click();}">
-            <div class="tooltip">Confederation
-              <span class="tooltiptext">Umbrella organizations of all Junior Enterprises in a given country or region</span>
+            <input
+              type="checkbox"
+              id="type-conf"
+              onkeyup="if(event.keyCode===13){this.click();}"
+            />
+            <div class="tooltip">
+              Confederation
+              <span class="tooltiptext"
+                >Umbrella organizations of all Junior Enterprises in a given
+                country or region</span
+              >
             </div>
           </label>
         </div>
       </div>
       <!-- Search Button -->
-      <div style="position: relative;">
+      <div style="position: relative">
         <a href="#" id="search-btn" onclick="runSearch()">
           Search
           <i class="fa fa-search"></i>
@@ -121,7 +250,7 @@
   <div id="je-info-nav">
     <button id="closeInfo-btn" onclick="closeInfo()">×</button>
   </div>
-  <div style="background-color: #fcfcfc;">
+  <div style="background-color: #fcfcfc">
     <div id="je-cover"></div>
     <div id="je-logo"></div>
     <div class="je-content">
@@ -141,11 +270,23 @@
   </div>
   <div class="je-benchmarking dark">
     <div class="powered-by">
-      <p>JE info powered by <a href="https://junior-connect.com/" target="_blank"><img src="/assets/logos/juniorconnect.png"> JuniorConnect</a></p>
+      <p>
+        JE info powered by
+        <a href="https://juniorenterprises.org/" target="_blank"
+          ><img
+            src="https://global.thorsys.co/wp-content/uploads/2020/11/logo1_colorful-768x226.png"
+          />
+          Junior Entreprise Global</a
+        >
+      </p>
       <p>
         <b>Are you from this Junior Enterprise?</b>
-        <br>
-        <a href="/insights/how-to-add-your-je-to-the-global-je-map/" target="_blank">Click here to discover how to complete or update your JE's profile</a>
+        <br />
+        <a
+          href="/insights/how-to-add-your-je-to-the-global-je-map/"
+          target="_blank"
+          >Click here to discover how to complete or update your JE's profile</a
+        >
       </p>
       <p id="jc-access"></p>
     </div>
